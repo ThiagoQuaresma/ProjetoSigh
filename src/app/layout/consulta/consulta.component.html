@@ -1,0 +1,126 @@
+<div [@routerTransition]>
+
+  <div class="card mb-3">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-lg-3">
+                <Span>Lista de Agendamentos</Span>
+            </div>
+            <div class="col-lg-7">
+
+            </div>
+            <div class="col-lg-2">
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" [routerLink]="['/agenda']">
+                    <i class="fa fa-plus"></i> <span class="caret"> Nova Consulta</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <div class="card-body">
+        <!-- <div uib-accordion-group class="panel-danger" heading="Delete account">
+            <p>Please, to delete your account, click the button below</p>
+            <button class="btn btn-danger">Delete</button>
+        </div> -->
+        <div class="row">
+        <div class="col-lg-2">
+            <fieldset class="form-group">
+                <label>Data:</label>
+                <input type="date" class="form-control">
+            </fieldset>
+        </div>
+
+        <div class="col-lg-3">
+                <label>Especialidade:</label>
+                <select class="form-control">
+                    <option>Oftalmologia</option>
+                    <option>Ortopedia</option>
+                    <option>Clinico Geral</option>
+                    <option>Cardiologia</option>
+                    <option>Pediatria</option>
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <label>Médico:</label>
+                <select class="form-control">
+                    <option>Dr Augusto Leal</option>
+                    <option>Dr Daniel Campanha</option>
+                    <option>Dr Thiago Quaresma</option>
+                </select>
+            </div>
+        </div>
+        <div class="card-body table-responsive">
+               
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Hora</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Plano</th>
+		            <th>Opções</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">08:00</th>
+                    <td>Larissa Biasi</td>
+                    <td>(21)98484-9090</td>
+                    <td>larissinha@gmail.com</td>
+                    <td>
+                        <input class="form-control col-lg-8" type="text" placeholder="Bradesco" disabled="">
+                    </td>
+                    <td>
+                        <button class="btn btn-link"><i class="fa fa-edit" routerLink="./cadastrar-consulta"></i></button>        
+                        <app-modal-deletar></app-modal-deletar>						
+                        <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->
+                        							
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">08:30</th>
+                    <td>João Biasi</td>
+                    <td>(21)99554-6060</td>
+                    <td>joaobiasi@gmail.com</td>
+                    <td>
+                        <input class="form-control col-lg-8" type="text" placeholder="Amil" disabled="">
+                    </td>
+                    <td>
+                        <button class="btn btn-link"><i class="fa fa-edit" routerLink="./cadastrar-consulta"></i></button>        
+                        <app-modal-deletar></app-modal-deletar>						
+                        <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->
+                        								
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">09:00</th>
+                    <td>Juliana Biasi</td>
+                    <td>(21)99757-0505</td>
+                    <td>jujubiasi@gmail.com</td>
+                    <td>
+                        <input class="form-control col-lg-8" type="text" placeholder="Sulamerica" text="" disabled="">
+                    </td>
+                    <td>
+                        <button class="btn btn-link"><i class="fa fa-edit" routerLink="./cadastrar-consulta"></i></button>        
+                        <app-modal-deletar></app-modal-deletar>										
+                        <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->
+                        <!-- <i class="fas fa-file-edit"></i> -->
+                        								
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            
+            <!-- Encerrando tabela -->
+            
+        </div>
+    </div>
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-lg-2">
+          <!-- <button class="btn btn-info btn-sm" (click)="randomize()">Buscar Agendamentos</button> -->
+        </div>
+    </div>
+  </div>
+</div>

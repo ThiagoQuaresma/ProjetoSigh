@@ -1,0 +1,87 @@
+<div [@routerTransition]>
+  <!-- <app-page-header [heading]="'Cadastro'" [icon]="'fa-edit'"></app-page-header> -->
+
+  <!-- Usando Charts -->
+  <div class="card mb-3">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-lg-2">
+          <Span>Lista de Pacientes</Span>
+        </div>
+        <div class="col-lg-8">
+
+        </div>
+        <div class="col-lg-2">
+          <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" routerLink="./new-paciente">
+            <i class="fa fa-plus"></i> <span class="caret"> Novo Paciente</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+    <div class="card-body">
+
+      <div class="card-body table-responsive">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Paciente</th>
+              <th>Telefone</th>
+              <th>E-mail</th>
+              <th>Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Larissa Biasi</td>
+              <td>(21)98484-9090</td>
+              <td>larissinha@gmail.com</td>
+              <td>
+                <button class="btn btn-link" routerLink="./alter-paciente"><i class="fa fa-edit"></i></button>
+                <app-modal-deletar-paciente></app-modal-deletar-paciente>
+                <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->
+
+              </td>
+            </tr>
+            <tr>
+              <td>João Biasi</td>
+              <td>(21)99554-6060</td>
+              <td>joaobiasi@gmail.com</td>
+              <td>
+                <button class="btn btn-link" routerLink="./alter-paciente"><i class="fa fa-edit"></i></button>
+                <app-modal-deletar-paciente></app-modal-deletar-paciente>
+                <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->
+
+              </td>
+            </tr>
+            <tr>
+              <td>Juliana Biasi</td>
+              <td>(21)99757-0505</td>
+              <td>jujubiasi@gmail.com</td>
+              <td>
+                <button class="btn btn-link" routerLink="./alter-paciente"><i class="fa fa-edit"></i></button>
+                <app-modal-deletar-paciente></app-modal-deletar-paciente>
+                <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-lg-2">
+          <!-- <button class="btn btn-info btn-sm" (click)="randomize()">Cancelar</button> -->
+        </div>
+        <div class="col-lg-3">
+          <!--Espaço em Branco-->
+        </div>
+        <div class="col-lg-2">
+          <!-- <button class="btn btn-info btn-sm" (click)="randomize()">Concluir</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,114 @@
+<div [@routerTransition]>
+  <!-- <app-page-header [heading]="'Cadastro'" [icon]="'fa-edit'"></app-page-header> -->
+
+      <!-- Usando Charts -->
+  <div class="card mb-3">
+      <div class="card-header">
+          Dados do Paciente
+      </div>
+      <div class="card-body">
+          <div class="row">
+              <div class="col-lg-3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ">
+                  <fieldset class="form-group">
+                      <label>Nº de atendimento:</label>
+                      <input type="number" class="form-control">
+                  </fieldset>            
+              </div>
+              <div class="col-lg-6">    
+                  <fieldset class="form-group">
+                      <label>Nome do Paciente:</label>
+                      <input class="form-control" type="text" placeholder="Nome completo">
+                      <p class="help-block"></p>
+                  </fieldset>
+              </div>
+              <div class="col-lg-2">
+                  <fieldset class="form-group">
+                      <label>Nascimento:</label>
+                      <input type="date" class="form-control">
+                      
+                  </fieldset>
+              </div>
+          </div>
+     
+          <div class="row">
+              <div class="col-lg-2">
+                  <label>Número do plano:</label>
+                  <fieldset class="form-group">
+                      <input class="form-control" placeholder="111.111.111-11">
+                    </fieldset>
+              </div>
+              <div class="col-lg-2">    
+                  <fieldset class="form-group">
+                      <label>CPF:</label>
+                      <input class="form-control" placeholder="111.111.111-11">
+                      <p class="help-block"></p>
+                  </fieldset>
+              </div>
+              <div class="col-lg-2">    
+                  <fieldset class="form-group">
+                      <label>RG:</label>
+                      <input class="form-control" placeholder="000.000.000-0">
+                      <p class="help-block"></p>
+                  </fieldset>
+              </div>
+              <div class="col-lg-5">
+                  <fieldset class="form-group">
+                      <label>E-mail:</label>
+                      <input type="text" class="form-control" placeholder="exemplo@exemplo.com.br">
+                  </fieldset>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-4">
+                  <fieldset class="form-group">
+                          <label>Sexo:</label>
+                          &nbsp;
+                          <label class="radio-inline">
+                              <input type="radio" name="optionMasc" id="optionsRadiosInline1" value="option1" checked="">Masculino
+                              &nbsp;
+                              <input type="radio" name="optionFemi" id="optionsRadiosInline2" value="option2" checked="">Feminino
+                          </label>
+                  </fieldset>
+              </div>
+              <div class="col-lg-4">
+                  <!-- Espaco em branco-->
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-6">
+                  <fieldset class="form-group">
+                      <label>Logradouro:</label>
+                      <input class="form-control" placeholder="Rua, bairro e cidade...">
+                      <p class="help-block"></p>
+                  </fieldset>
+              </div>
+              <div class="col-lg-2">
+                  <fieldset class="form-group">
+                      <label>Número:</label>
+                      <input class="form-control" placeholder="Numero...">
+                      <p class="help-block"></p>
+                  </fieldset>
+              </div>
+              <div class="col-lg-4">
+                  <fieldset class="form-group">
+                      <label>Complemento:</label>
+                      <input class="form-control" placeholder="Lote, apto...">
+                      <p class="help-block"></p>
+                  </fieldset>
+              </div>
+          </div>
+      </div>
+      <div class="card-footer">
+          <div class="row">
+              <div class="col-lg-2">
+                  <button class="btn btn-info btn-sm" (click)="randomize()">Cancelar</button>
+              </div>
+              <div class="col-lg-3">
+                  <!--Espaço em Branco-->
+              </div>
+              <div class="col-lg-2">
+                  <button class="btn btn-info btn-sm" (click)="randomize()">Concluir</button>
+              </div>
+          </div>
+      </div>
+  </div>

@@ -1,0 +1,237 @@
+<div [@routerTransition]>
+
+    <div class="card mb-3">
+        <div class="card-header">
+            Dados do Agendamento
+            <!-- <p *ngFor= "let num of dia.number">{{num}}</p> -->
+        </div>
+        <div class="card-body">
+            <!-- <div uib-accordion-group class="panel-danger" heading="Delete account">
+            <p>Please, to delete your account, click the button below</p>
+            <button class="btn btn-danger">Delete</button>
+        </div> -->
+            <div class="row">
+                <div class="col-lg-3">
+                    <label>Especialidade:</label>
+                    <select class="form-control">
+                        <option>Oftalmologia</option>
+                        <option>Ortopedia</option>
+                        <option>Clinico Geral</option>
+                        <option>Cardiologia</option>
+                        <option>Pediatria</option>
+                    </select>
+                </div>
+                <div class="col-lg-3">
+                    <label>Médico:</label>
+                    <select class="form-control">
+                        <option>Dr Augusto Leal</option>
+                        <option>Dr Daniel Campanha</option>
+                        <option>Dr Thiago Quaresma</option>
+                    </select>
+                </div>
+                <div class="col-lg-3">
+                    <label>Mês:</label>
+                    <select class="form-control" onchange= diasNoMes(i,getFullYear())> 
+                        <option *ngFor= "let mes of mes.month; let i = index">{{mes.m}}</option>
+                        <!-- <option>Fevereiro</option>
+                        <option>Março</option>
+                        <option>Abril</option>
+                        <option>Maio</option>
+                        <option>Junho</option>
+                        <option>Julho</option>
+                        <option>Agosto</option>
+                        <option>Setembro</option>
+                        <option>Outubro</option>
+                        <option>Novembro</option>
+                        <option>Dezembro</option> -->
+                    </select>
+                </div>
+            </div>
+            <p></p>
+            <div *ngFor= "let num of dia.number; let i = index" class="row">
+                <div class="col-lg-12">
+                    <button *ngFor= "let i of num" type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">{{i}}</span>
+                    </button>
+                    <!-- <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">2</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">3</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">4</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">5</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">6</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">7</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">8</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">9</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">10</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">11</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">12</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">13</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">14</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">15</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">16</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">17</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">18</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">19</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">20</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">21</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">22</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">23</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">24</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">25</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">26</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">27</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">28</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">29</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">30</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
+                        <span class="caret">31</span>
+                    </button> -->
+                </div>
+            </div>
+
+            <div class="container">
+                <h2></h2>
+                <p></p>
+                <table class="table table-bordered">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>08:30&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>09:00&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>09:30&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>10:00&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                        </tr>
+                        <tr>
+                            <td>10:30&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>11:00&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>11:30&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>12:00&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                        </tr>
+                        <tr>
+                            <td>12:30&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>13:00&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>13:30&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>14:00&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                        </tr>
+                        <tr>
+                            <td>14:30&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>15:00&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>15:30&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>16:00&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                        </tr>
+                        <tr>
+                            <td>17:00&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>18:00&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>18:30&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                            <td>19:00&nbsp;&nbsp;<app-modal></app-modal><app-new-modal></app-new-modal></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- <div class="card-body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Especialidade</th>
+                            <th>Opções</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dr Augusto Leal</td>
+                            <td>Ortopedia</td>
+                            <td><button class="btn btn-link"><i class="fa fa-calendar" routerLink="./agendamento"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dr Daniel Campanha</td>
+                            <td>Ortopedia</td>
+                            <td><button class="btn btn-link"><i class="fa fa-calendar" routerLink="./agendamento"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dr Thiago Quaresma</td>
+                            <td>Ortopedia</td>
+                            <td><button class="btn btn-link"><i class="fa fa-calendar" routerLink="./agendamento"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-lg-2">
+                    <!-- <button class="btn btn-info btn-sm" (click)="randomize()">Cancelar</button> -->
+                </div>
+                <div class="col-lg-3">
+                    <!--Espaço em Branco-->
+                </div>
+                <div class="col-lg-2">
+                    <!-- <button class="btn btn-info btn-sm" (click)="randomize()">Listar</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
