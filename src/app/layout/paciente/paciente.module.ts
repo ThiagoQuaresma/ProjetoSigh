@@ -6,6 +6,7 @@ import { PacienteRoutingModule } from './paciente-routing.module';
 import { ModalDeletarPacienteComponent } from './modal-deletar-paciente/modal-deletar-paciente.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TextMaskModule } from 'angular2-text-mask';
 
 @NgModule({     
     imports: [CommonModule,

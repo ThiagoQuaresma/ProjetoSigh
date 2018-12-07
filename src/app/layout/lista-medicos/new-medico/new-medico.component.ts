@@ -11,4 +11,7 @@ export class NewMedicoComponent implements OnInit {
     constructor() {}
 
     ngOnInit() {}
+
+    public myModel = ''
+    public mask = ['(', /[1-9]/, /\d/, ')', ' ',/[9-9]/, ' ',/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
 }
