@@ -27,38 +27,16 @@
                     <thead>
                         <tr>
                             <th>Médico</th>
-                            <th>Telefone</th>
+                            <th>CRM</th>
                             <th>E-mail</th>
                             <th>Opções</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Larissa Biasi</td>
-                            <td>(21)98484-9090</td>
-                            <td>larissinha@gmail.com</td>
-                            <td>
-                                <button class="btn btn-link" routerLink="./alter-medico"><i class="fa fa-edit"></i></button>
-                                <app-modal-deletar-medico></app-modal-deletar-medico>
-                                <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>João Biasi</td>
-                            <td>(21)99554-6060</td>
-                            <td>joaobiasi@gmail.com</td>
-                            <td>
-                                <button class="btn btn-link" routerLink="./alter-medico"><i class="fa fa-edit"></i></button>
-                                <app-modal-deletar-medico></app-modal-deletar-medico>
-                                <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Juliana Biasi</td>
-                            <td>(21)99757-0505</td>
-                            <td>jujubiasi@gmail.com</td>
+                        <tr *ngFor="let medico of medicoList; let id = index;">
+                            <td>{{medico.name}}</td>
+                            <td>{{medico.crm}}</td>
+                            <td>{{medico.email}}</td>
                             <td>
                                 <button class="btn btn-link" routerLink="./alter-medico"><i class="fa fa-edit"></i></button>
                                 <app-modal-deletar-medico></app-modal-deletar-medico>

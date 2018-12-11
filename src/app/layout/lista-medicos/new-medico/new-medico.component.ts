@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../../router.animations';
+import { MedicoService } from '../../../services/medico-services';
+import { Medico } from '../../../classes/medico';
+import { UfmedService } from '../../../services/ufmed-services';
+import { Ufmed } from '../../../classes/ufmed';
 
 @Component({
     selector: 'app-new-medico',
@@ -8,10 +12,44 @@ import { routerTransition } from '../../../router.animations';
     animations: [routerTransition()]
 })
 export class NewMedicoComponent implements OnInit {
-    constructor() {}
+    id: any
+    constructor(
+        private ufmedService: UfmedService,
+        private medicioService: MedicoService
+        // private especialidadeService: EspecialidadeService,
 
-    ngOnInit() {}
+    ) { }
 
-    public myModel = ''
-    public mask = ['(', /[1-9]/, /\d/, ')', ' ',/[9-9]/, ' ',/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+    public medico = new Medico();
+    public ufmed = new Ufmed();
+
+    // public especialidade = new Especialidade();
+
+    private medicoList = [];
+
+
+    public insertMedico() {
+        console.log(this.medico);
+        this.id = this.medico.id;
+        this.medicioService.insertMedico(this.medico).subscribe(Response => {
+            console.log('Sucesso');
+        })
+    }
+
+    public insertUfmed() {
+        console.log(this.ufmed);
+        this.ufmed.medico_idmedico = this.id;
+        this.ufmedService.insertUfmed(this.ufmed).subscribe(Response => {
+            console.log('Sucesso');
+        })
+    }
+
+    insertAll() {
+        this.insertMedico();
+        this.insertUfmed();
+    }
+
+    ngOnInit() {
+        //this.findAll();
+    }
 }

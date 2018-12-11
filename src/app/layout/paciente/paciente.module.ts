@@ -11,6 +11,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 @NgModule({     
     imports: [CommonModule,
               FormsModule,
+              TextMaskModule,
               ReactiveFormsModule,
               NgbModule.forRoot(),
               PacienteRoutingModule],

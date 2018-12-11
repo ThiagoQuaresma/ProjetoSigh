@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { routerTransition } from '../../router.animations';
+import { MedicoService } from '../../services/medico-services';
 
 @Component({
   selector: 'app-lista-medicos',
@@ -10,9 +11,19 @@ import { routerTransition } from '../../router.animations';
 })
 export class ListaMedicosComponent implements OnInit {
 
-  constructor() { }
+  private medicoList = [];
+
+  constructor(private medicoService: MedicoService) { }
+
+  public findAll(){
+    this.medicoService.findAll().subscribe( resultado => {
+
+       this.medicoList = resultado;
+    })
+}
 
   ngOnInit() {
+    this.findAll();
   }
 
 }

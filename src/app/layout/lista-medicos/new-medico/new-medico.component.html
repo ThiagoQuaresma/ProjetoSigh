@@ -1,30 +1,28 @@
 <div [@routerTransition]>
-    <!-- <app-page-header [heading]="'Cadastro'" [icon]="'fa-edit'"></app-page-header> -->
-
-        <!-- Usando Charts -->
     <div class="card mb-3">
         <div class="card-header">
             Dados do Médico
         </div>
         <div class="card-body">
+            <form>
             <div class="row">
                 <div class="col-lg-2">
                     <fieldset class="form-group">
                         <label>CRM:</label>
-                        <input type="number" class="form-control">
+                        <input type="number" class="form-control" id="crm" [(ngModel)]="medico.crm" name="crm"  >
                     </fieldset>            
                 </div>
                 <div class="col-lg-6">    
                     <fieldset class="form-group">
                         <label>Médico:</label>
-                        <input class="form-control" type="text" placeholder="Nome completo">
+                        <input class="form-control" type="text"  id="name" [(ngModel)]="medico.name" name="name" placeholder="Nome completo">
                         <p class="help-block"></p>
                     </fieldset>
                 </div>
                 <div class="col-lg-4">
                     <fieldset class="form-group">
                         <label>Email:</label>
-                        <input type="text" class="form-control" placeholder="exemplo@exemplo.com.br">
+                        <input type="text" class="form-control"  id="email" [(ngModel)]="medico.email" name="email"  placeholder="exemplo@exemplo.com.br">
                     </fieldset>
                 </div>
             </div>
@@ -33,7 +31,7 @@
                 <div class="col-lg-4">
                     <label>Especialidade:</label>
                     <select class="form-control">
-                        <option>Oftalmologia</option>
+                        <option>Qualquer coisa</option>
                         <option>Ortopedia</option>
                         <option>Clinico Geral</option>
                         <option>Cardiologia</option>
@@ -43,21 +41,21 @@
                 <div class="col-lg-2">    
                     <fieldset class="form-group">
                         <label>CPF:</label>
-                        <input class="form-control" placeholder="111.111.111-11">
+                        <input class="form-control"  id="cpf" [(ngModel)]="medico.cpf" name="cpf"  placeholder="111.111.111-11">
                         <p class="help-block"></p>
                     </fieldset>
                 </div>
                 <div class="col-lg-2">    
                     <fieldset class="form-group">
                         <label>RG:</label>
-                        <input class="form-control" placeholder="000.000.000-0">
+                        <input class="form-control"  id="rg" [(ngModel)]="medico.rg" name="rg"  placeholder="000.000.000-0">
                         <p class="help-block"></p>
                     </fieldset>
                 </div>
                 <div class="col-lg-2">
                     <fieldset class="form-group">
                         <label>Nascimento:</label>
-                        <input type="date" class="form-control">
+                        <input type="date"  id="nasci" [(ngModel)]="medico.nasci" name="nasci"  class="form-control">
                     </fieldset>
                 </div>
             </div>
@@ -67,23 +65,23 @@
                             <label>Sexo:</label>
                             &nbsp;<br>
                             <label class="radio-inline">
-                                <input type="radio" name="genero" id="optionsRadiosInline1" value="option1" >Masculino
+                                <input type="radio" id="masculino" [(ngModel)]="medico.sexo" name="sexo"  value="M" >Masculino
                                 &nbsp;
-                                <input type="radio" name="genero" id="optionsRadiosInline2" value="option2" checked>Feminino
+                                <input type="radio" id="feminino" [(ngModel)]="medico.sexo" name="sexo"  value="F" checked>Feminino
                             </label>
                     </fieldset>
                 </div>
                 <div class="col-lg-2">
                     <fieldset class="form-group">
                         <label>CEP:</label>
-                        <input class="form-control" placeholder="00000-000">
+                        <input class="form-control"  placeholder="00000-000">
                         <p class="help-block"></p>
                     </fieldset>
                 </div>
                 <div class="col-lg-7">
                     <fieldset class="form-group">
                         <label>Endereço:</label>
-                        <input class="form-control" placeholder="Rua, bairro e cidade...">
+                        <input class="form-control" id="lograd_med" [(ngModel)]="ufmed.lograd_med" name="lograd_med"  placeholder="Rua, bairro e cidade...">
                         <p class="help-block"></p>
                     </fieldset>
                 </div>
@@ -92,27 +90,30 @@
                 <div class="col-lg-2">
                     <fieldset class="form-group">
                         <label>Número:</label>
-                        <input class="form-control" placeholder="Numero...">
+                        <input class="form-control" [(ngModel)]="ufmed.num_logra_med" name="num_logra_med" id="num_logra_med" placeholder="Numero...">
                         <p class="help-block"></p>
                     </fieldset>
                 </div>
                 <div class="col-lg-4">
                     <fieldset class="form-group">
                         <label>Complemento:</label>
-                        <input class="form-control" placeholder="Lote, apto...">
+                        <input class="form-control" [(ngModel)]="ufmed.compl_logra_med" name="compl_logra_med" id="compl_logra_med" placeholder="Lote, apto...">
                         <p class="help-block"></p>
                     </fieldset>
                 </div>
             </div>
+        </form>
         </div>
+    
         <div class="card-footer">
             <div class="row">
                 <div class="col-lg-02">
                     <button class="btn btn-info btn-sm mr-2" routerLink="../../" >Cancelar</button>
-                    <button class="btn btn-info btn-sm" (click)="randomize()">Concluir</button>
+                    <button class="btn btn-info btn-sm" (click)="insertAll()">Concluir</button>
                 </div>
             </div>
         </div>
+    
     </div>
 
     <!--Modelo abaixo segue como exemplo-->

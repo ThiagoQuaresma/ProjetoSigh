@@ -33,32 +33,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Larissa Biasi</td>
-              <td>(21)98484-9090</td>
-              <td>larissinha@gmail.com</td>
-              <td>
-                <button class="btn btn-link" routerLink="./alter-paciente"><i class="fa fa-edit"></i></button>
-                <app-modal-deletar-paciente></app-modal-deletar-paciente>
-                <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->
-
-              </td>
-            </tr>
-            <tr>
-              <td>João Biasi</td>
-              <td>(21)99554-6060</td>
-              <td>joaobiasi@gmail.com</td>
-              <td>
-                <button class="btn btn-link" routerLink="./alter-paciente"><i class="fa fa-edit"></i></button>
-                <app-modal-deletar-paciente></app-modal-deletar-paciente>
-                <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->
-
-              </td>
-            </tr>
-            <tr>
-              <td>Juliana Biasi</td>
-              <td>(21)99757-0505</td>
-              <td>jujubiasi@gmail.com</td>
+            <tr *ngFor="let paciente of pacienteList; let id = index;">
+              <td>{{paciente.name}}</td>
+              <td >{{paciente.telefone}}</td>
+              <td>{{paciente.email}}</td>
               <td>
                 <button class="btn btn-link" routerLink="./alter-paciente"><i class="fa fa-edit"></i></button>
                 <app-modal-deletar-paciente></app-modal-deletar-paciente>

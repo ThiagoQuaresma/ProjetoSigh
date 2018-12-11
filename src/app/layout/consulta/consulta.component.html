@@ -33,19 +33,13 @@
         <div class="col-lg-3">
                 <label>Especialidade:</label>
                 <select class="form-control">
-                    <option>Oftalmologia</option>
-                    <option>Ortopedia</option>
-                    <option>Clinico Geral</option>
-                    <option>Cardiologia</option>
-                    <option>Pediatria</option>
+                    <option *ngFor="let consulta of consultaList; let id = index;">{{consulta.especialidade }}</option>
                 </select>
             </div>
             <div class="col-lg-3">
                 <label>Médico:</label>
                 <select class="form-control">
-                    <option>Dr Augusto Leal</option>
-                    <option>Dr Daniel Campanha</option>
-                    <option>Dr Thiago Quaresma</option>
+                    <option *ngFor="let consulta of consultaList; let id = index;">{{consulta.consulta_nome_med}}</option>
                 </select>
             </div>
         </div>
@@ -63,50 +57,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">08:00</th>
-                    <td>Larissa Biasi</td>
-                    <td>(21)98484-9090</td>
-                    <td>larissinha@gmail.com</td>
-                    <td>
-                        <input class="form-control col-lg-8" type="text" placeholder="Bradesco" disabled="">
+                <tr *ngFor="let consulta of consultaList;let id = index;">
+                    <th scope="row">{{consulta.hora}}</th>
+                    <td>{{consulta.consulta_nome_pac}}</td>
+                    <td>{{consulta.telefone}}</td>
+                    <td>thi_quaresma@gmail.com</td>
+                    <td>{{consulta.plano}}
                     </td>
                     <td>
                         <button class="btn btn-link"><i class="fa fa-edit" routerLink="./cadastrar-consulta"></i></button>        
                         <app-modal-deletar></app-modal-deletar>						
-                        <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->
-                        							
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">08:30</th>
-                    <td>João Biasi</td>
-                    <td>(21)99554-6060</td>
-                    <td>joaobiasi@gmail.com</td>
-                    <td>
-                        <input class="form-control col-lg-8" type="text" placeholder="Amil" disabled="">
-                    </td>
-                    <td>
-                        <button class="btn btn-link"><i class="fa fa-edit" routerLink="./cadastrar-consulta"></i></button>        
-                        <app-modal-deletar></app-modal-deletar>						
-                        <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->
-                        								
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">09:00</th>
-                    <td>Juliana Biasi</td>
-                    <td>(21)99757-0505</td>
-                    <td>jujubiasi@gmail.com</td>
-                    <td>
-                        <input class="form-control col-lg-8" type="text" placeholder="Sulamerica" text="" disabled="">
-                    </td>
-                    <td>
-                        <button class="btn btn-link"><i class="fa fa-edit" routerLink="./cadastrar-consulta"></i></button>        
-                        <app-modal-deletar></app-modal-deletar>										
-                        <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->
-                        <!-- <i class="fas fa-file-edit"></i> -->
-                        								
+                        <!-- <button class="btn btn-link"><i class="fa">&#xf232;</i></button>-->			
                     </td>
                 </tr>
                 </tbody>

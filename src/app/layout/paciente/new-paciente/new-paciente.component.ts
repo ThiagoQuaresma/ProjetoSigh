@@ -21,7 +21,14 @@ export class NewPacienteComponent implements OnInit {
   public myModel = ''
   public mask = ['(', /[1-9]/, /\d/, ')', ' ',/[9-9]/, ' ',/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
 
-  consultaCEP(cep){
+
+  onSubmit(formulario) {
+    console.log(formulario);
+        
+
+  }
+
+  consultaCEP(cep, form){
 
     //Nova variável "cep" somente com dígitos.
     cep = cep.replace(/\D/g, '');
@@ -35,11 +42,34 @@ export class NewPacienteComponent implements OnInit {
       //Valida o formato do CEP.
       if(validacep.test(cep)){
 
+        this.resetaDadosForm(form);
+
         this.Http.get(`//viacep.com.br/ws/${cep}/json`)
           .map(dados => dados.json())
-          .subscribe(dados => console.log(dados));
+          .subscribe(dados => console.log(form));
       }
     }
   }
 
+  populaDadosForm(dados, form){
+    dados.form.setValue({
+      endereco:{
+        rua: dados.logradouro,
+        numero: dados.numero,
+        cidade: dados.localidade,
+        complemento: dados.complemento
+      }
+    })
+  }
+
+  resetaDadosForm(formulario){
+    formulario.form.patchValue({
+      endereco:{
+        rua: null,
+        numero: null,
+        cidade: null,
+        complemento: null
+      }
+    })
+  }
 }

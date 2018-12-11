@@ -1,3 +1,4 @@
+
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,12 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
+import { MedicoService } from './services/medico-services';
+import { PacienteService } from './services/paciente-services';
+import { ConsultaService } from './services/consulta-services';
+import { HistoricoService } from './services/historico-service';
+import { Especialidade } from './classes/especialidade';
+import { UfmedService } from './services/ufmed-services';
 
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
@@ -37,7 +44,13 @@ export const createTranslateLoader = (http: HttpClient) => {
         AppRoutingModule
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard],
+    providers: [AuthGuard,
+                MedicoService,
+                PacienteService,
+                ConsultaService,
+                Especialidade,
+                HistoricoService,
+                UfmedService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
